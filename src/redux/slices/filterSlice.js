@@ -1,35 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-categoryId: 0,
-currentPage: 1,
-sort: {
+  categoryId: 0,
+  currentPage: 1,
+  sort: {
     name: "популярности",
-    sortProperty: "рейтинг"
-  }
-}
+    sortProperty: "rating",
+  },
+};
 
 const filterSlice = createSlice({
-name: 'filters', 
-initialState,
-reducers: {
-setCategoyId(state, action) {
-state.categoryId = action.payload
-},
-setSort(state, action) {
-state.sort = action.payload
-},
-setCurrentPage(state, action) {
-  state.currentPage = action.payload
+  name: "filters",
+  initialState,
+  reducers: {
+    setCategoyId(state, action) {
+      state.categoryId = action.payload;
+    },
+    setSort(state, action) {
+      state.sort = action.payload;
+    },
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
+    },
+    setFilters(state, action) {
+      state.currentPage = Number(action.payload.currentPage);
+      state.sort = action.payload.sort;
+      state.categoryId = Number(action.payload.categoryId);
+    },
   },
-setFilters(state, action) {
-  state.currentPage = Number(action.payload.currentPage) 
-  state.sort.sortProperty = action.payload.sort
-  state.categoryId = Number( action.payload.categoryId)
-}
-}
-})
+});
 
- export const {setCategoyId, setSort, setCurrentPage, setFilters} = filterSlice.actions
+export const { setCategoyId, setSort, setCurrentPage, setFilters } =
+  filterSlice.actions;
 
-export default filterSlice.reducer
+export default filterSlice.reducer;

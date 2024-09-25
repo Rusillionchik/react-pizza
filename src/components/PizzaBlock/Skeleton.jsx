@@ -1,8 +1,8 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+import React from "react";
+import ContentLoader from "react-content-loader";
 
 const Skeleton = (props) => (
-  <ContentLoader 
+  <ContentLoader
     className="pizza-block"
     speed={2}
     width={280}
@@ -12,12 +12,12 @@ const Skeleton = (props) => (
     foregroundColor="#ecebeb"
     {...props}
   >
-    <circle cx="134" cy="136" r="125" /> 
-    <rect x="0" y="296" rx="10" ry="10" width="280" height="23" /> 
-    <rect x="0" y="345" rx="10" ry="10" width="280" height="88" /> 
-    <rect x="0" y="455" rx="10" ry="10" width="91" height="27" /> 
+    <circle cx="134" cy="136" r="125" />
+    <rect x="0" y="296" rx="10" ry="10" width="280" height="23" />
+    <rect x="0" y="345" rx="10" ry="10" width="280" height="88" />
+    <rect x="0" y="455" rx="10" ry="10" width="91" height="27" />
     <rect x="124" y="446" rx="25" ry="25" width="150" height="45" />
   </ContentLoader>
-)
+);
 
-export default Skeleton
+export default Skeleton;
