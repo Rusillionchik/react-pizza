@@ -1,7 +1,6 @@
-
-@import './variables';
-@import './libs/normalize';
-@import './components/all';
+@import "./variables";
+@import "./libs/normalize";
+@import "./components/all";
 
 body {
   background-color: $background;
@@ -15,16 +14,29 @@ body {
   border-radius: 10px;
   max-width: 1400px;
 
-  @media (max-width: 645px ){
+  @media (max-width: 645px) {
     width: calc(100vw - 30px);
     margin-top: 30px;
   }
-    
-  
 }
 
 .content {
   padding: 40px 0;
+
+  &__error-info {
+    margin: 100px auto;
+    width: 500px;
+    text-align: center;
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
 
   &__title {
     font-weight: 800;
@@ -34,22 +46,22 @@ body {
   }
 
   &__items {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 11px;
-      
-      @media (max-width: 1400px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 11px;
 
-      @media (max-width: 1060px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 1400px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-      @media (max-width: 730px) {
-        grid-template-columns: repeat(1, 1fr);
-      }
+    @media (max-width: 1060px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 730px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__top {
@@ -58,13 +70,12 @@ body {
     justify-content: space-between;
 
     @media (max-width: 1260px) {
-      
       .categories {
         width: 100%;
         overflow: auto;
 
-        ul {       
-           width: 785px;
+        ul {
+          width: 785px;
         }
       }
 
@@ -72,10 +83,8 @@ body {
         padding-left: 20px;
         b {
           display: none;
-
         }
       }
-
 
       @media (max-width: 760px) {
         .categories {
@@ -91,7 +100,7 @@ body {
         .categories {
           margin-top: 30px;
         }
-        
+
         flex-direction: column-reverse;
       }
     }
