@@ -9,6 +9,7 @@ import Pagination from "../Pagination";
 
 import { SearchContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Skeleton from "../components/PizzaBlock/Skeleton";
 
@@ -129,7 +130,11 @@ const Home = () => {
     .filter((obj) => {
       return obj.title.toLowerCase().includes(searchValue.toLowerCase());
     })
-    .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
+    .map((obj) => (
+      <Link key={obj.id} to={`pizza/${obj.id}`}>
+        <PizzaBlock {...obj} />
+      </Link>
+    ));
   const skeletons = [...new Array(8)].map((_, index) => (
     <Skeleton key={index} />
   ));
