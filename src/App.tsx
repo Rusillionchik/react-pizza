@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "./pages/Home";
 
 import Cart from "./pages/Cart";
@@ -7,7 +6,6 @@ import FullPizza from "./pages/Fullpizza";
 
 import { Routes, Route } from "react-router-dom";
 import "./scss/app.scss";
-import Categories from "./components/Caregories";
 
 import "./scss/app.scss";
 import MainLayOut from "./layouts/MainLayOut";

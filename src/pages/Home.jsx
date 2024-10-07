@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 import qs from "qs";
 
 import Categories from "../components/Caregories";
@@ -7,7 +7,6 @@ import Sort from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Pagination from "../Pagination";
 
-import { SearchContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
