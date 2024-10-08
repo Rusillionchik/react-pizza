@@ -22,7 +22,7 @@ import {
 } from "../redux/slices/filterSlice";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+const Home: React.FC = () => {
   // const { searchValue } = React.useContext(SearchContext);
 
   const navigate = useNavigate();
@@ -39,11 +39,11 @@ const Home = () => {
   // const [items, setItems] = React.useState([]);
   // const [isLoading, setIsLoading] = React.useState(true);
 
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id: number) => {
     dispatch(setCategoyId(id));
   };
 
-  const onChangePage = (number) => {
+  const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
   };
 
@@ -72,6 +72,7 @@ const Home = () => {
     // try {
     //   console.log(555);
     dispatch(
+      //@ts-ignore
       fetchPizzas({
         search,
         categoryId,
@@ -126,10 +127,10 @@ const Home = () => {
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   const pizzas = items
-    .filter((obj) => {
+    .filter((obj: any) => {
       return obj.title.toLowerCase().includes(searchValue.toLowerCase());
     })
-    .map((obj) => (
+    .map((obj: any) => (
       <Link key={obj.id} to={`pizza/${obj.id}`}>
         <PizzaBlock {...obj} />
       </Link>
