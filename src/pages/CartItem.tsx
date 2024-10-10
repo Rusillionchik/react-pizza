@@ -3,7 +3,7 @@ import "../scss/app.scss";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem, minusItem } from "../redux/slices/cartSlice";
 
-type CartItemProps = {
+export type CartItemProps = {
   id: string;
   title: string;
   type: string;
