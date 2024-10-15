@@ -6,9 +6,7 @@ import Categories from "../components/Caregories";
 import Sort from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Pagination from "../Pagination";
-
 import { useNavigate } from "react-router-dom";
-
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -40,9 +38,9 @@ const Home: React.FC = () => {
   // const [items, setItems] = React.useState([]);
   // const [isLoading, setIsLoading] = React.useState(true);
 
-  const onChangeCategory = (id: number) => {
+  const onChangeCategory = React.useCallback((id: number) => {
     dispatch(setCategoyId(id));
-  };
+  }, []);
 
   const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
@@ -139,7 +137,7 @@ const Home: React.FC = () => {
     .filter((obj: any) => {
       return obj.title.toLowerCase().includes(searchValue.toLowerCase());
     })
-    .map((obj: any) => <PizzaBlock {...obj} />);
+    .map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
   const skeletons = [...new Array(8)].map((_, index) => (
     <Skeleton key={index} />
   ));
@@ -149,7 +147,7 @@ const Home: React.FC = () => {
       <div className="container">
         <div className="content__top">
           <Categories value={categoryId} onChangeCategory={onChangeCategory} />
-          <Sort />
+          <Sort value={sort} />
         </div>
         <h2 className="content__title">Все пиццы</h2>
         {status === "error" ? (
