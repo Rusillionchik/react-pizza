@@ -3,7 +3,7 @@ import Search from "./Search";
 
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCart } from "../redux/slices/cartSlice";
+import { selectCart } from "../redux/slices/cart/selectors";
 import React from "react";
 import { log } from "console";
 

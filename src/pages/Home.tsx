@@ -10,16 +10,15 @@ import { useNavigate } from "react-router-dom";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  selectFilter,
   setCategoyId,
   setCurrentPage,
   setFilters,
-} from "../redux/slices/filterSlice";
-import {
-  SearchPizzaParams,
-  fetchPizzas,
-  selectPizzaData,
-} from "../redux/slices/pizzaSlice";
+} from "../redux/slices/filter/slice";
+import { selectFilter } from "../redux/slices/filter/selectors";
+import { fetchPizzas } from "../redux/slices/pizza/asyncAction";
+import { SearchPizzaParams } from "../redux/slices/pizza/types";
+
+import { selectPizzaData } from "../redux/slices/pizza/selectors";
 
 const Home: React.FC = () => {
   // const { searchValue } = React.useContext(SearchContext);
